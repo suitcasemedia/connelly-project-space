@@ -148,3 +148,63 @@ li {
     margin-bottom: 1em;
   }
 }
+
+.gallery {
+  margin-top: 4em;
+}
+
+.canvas-entry {
+  margin-bottom: 4em;
+}
+
+.media-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.media-block {
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+}
+
+
+.media-block svg.placeholder {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  stroke: #ccc;
+}
+
+.exhibition-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exhibition-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.exhibition-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin-right: 1em;
+  flex-shrink: 0;
+}
+
+.exhibition-text {
+  font-size: 0.95em;
+}
