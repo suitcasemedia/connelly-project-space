@@ -1,34 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact – Connelly Project Space</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Connelly Project Space</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Connelly Project Space</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="exhibitions.html">Exhibitions</a>
-      <a href="artists.html">Artists</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
-  </header>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html"><h1>Connelly Project Space</h1></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="artists.html">Artists</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+    </header>
 
-  <main>
-    <h2>Contact</h2>
-    <p>To enquire about visiting the gallery or collaborating on future exhibitions, please get in touch via email:</p>
-    <p><strong>Email:</strong> <a href="mailto:jimmyjconnelly@gmail.com">jimmyjconnelly@gmail.com</a></p>
-    <p><em>Please note: we do not publicly list the gallery's physical location for child safety reasons. Visits are by appointment only.</em></p>
-  </main>
+    <main>
+      <h2>Contact</h2>
+      <p>
+        To enquire about visiting the gallery or collaborating on future
+        exhibitions, please get in touch via the contact form or Whatsapp:
+        <a href="whatsapp://send?abid=447939562184&text=Hello%2C%20World!"
+          >+44 7939 562184</a
+        >
+      </p>
+      <main>
+        <section class="contact-form">
+          <h2>Get in Touch</h2>
+          <form action="https://formspree.io/f/mqaqnbar" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required />
 
-  <footer>
-    <p>&copy; 2025 Connelly Project Space</p>
-  </footer>
-</body>
+            <label for="email">Email</label>
+            <input type="email" name="_replyto" id="email" required />
+
+            <label for="message">Message</label>
+            <textarea name="message" id="message" rows="6" required></textarea>
+
+            <button type="submit">Send Message</button>
+          </form>
+        </section>
+      </main>
+
+      <p>
+        <em
+          >Please note: we do not publicly list the gallery's physical location
+          for child safety reasons. Visits are by appointment only.</em
+        >
+      </p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Connelly Project Space</p>
+    </footer>
+  </body>
 </html>

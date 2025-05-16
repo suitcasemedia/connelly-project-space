@@ -1,44 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connelly Project Space</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connelly Project Space</title>
 
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1>Connelly Project Space</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="exhibitions.html">Exhibitions</a>
-      <a href="artists.html">Artists</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <main>
-    <section class="intro">
-      <h2>Welcome to the Connelly Project Space</h2>
-      <p>A family-run, experimental exhibition programme presenting contemporary art inside the world’s first chicken coop gallery, also known as the ICA – Institute of Chicken Art.</p>
-    </section>
+    <!-- Cloudinary Video Player CSS -->
+    <link
+      href="https://unpkg.com/cloudinary-video-player@1.9.9/dist/cld-video-player.min.css"
+      rel="stylesheet"
+    />
 
-    <section class="highlight">
-      <h2>Now Showing</h2>
-      <h3>Chicken Stingel</h3>
-      <video controls width="100%">
-        <source src="chicken-stingel.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p>By Kenny Schachter, Maura & Margaret. Weekends by appointment through June 21.</p>
-    </section>
-  </main>
+    <!-- Your Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Connelly Project Space</h1>
+      <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="exhibitions.html">Exhibitions</a>
+        <a href="artists.html">Artists</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <footer>
-    <p>&copy; 2025 Connelly Project Space</p>
-  </footer>
-</body>
+    <main>
+      <section class="intro">
+        <h2>Welcome to the Connelly Project Space</h2>
+        <p>
+          A family-run, experimental exhibition programme presenting
+          contemporary art inside the world’s first chicken coop gallery, also
+          known as the ICA – Institute of Chicken Art.
+        </p>
+      </section>
+
+      <section class="highlight">
+        <h2>Now Showing</h2>
+        <h3>Chicken Stingel</h3>
+
+        <!-- Cloudinary Video Player -->
+        <video
+          src="https://res.cloudinary.com/dyliwmprw/video/upload/v1747408168/chicken-stingel/vs1k2k4jy6vhopquf1zl.mov"
+          controls
+          width="100%"
+        ></video>
+        <p>
+          By Kenny Schachter, Maura & Margaret. Weekends by appointment through
+          June 21.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Connelly Project Space</p>
+    </footer>
+
+    <!-- Cloudinary Player Script -->
+  </body>
 </html>
