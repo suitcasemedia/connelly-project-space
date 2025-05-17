@@ -1,7 +1,7 @@
 ---
 title: Hello Chickens
 date: 2025-05-16
-layout: layout.njk
+layout: bloglayout.njk
 tags: post
 categories:
   - Chickens
