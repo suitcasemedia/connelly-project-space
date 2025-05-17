@@ -24,6 +24,9 @@
             </nav>
         </header>
         <main class="blog-layout">
+            <section class="content-area">
+                {{ content | safe }}
+            </section>
             <aside class="sidebar">
                 <h3>Archive</h3>
                 <ul>
@@ -42,9 +45,7 @@
                     {% endfor %}
                 </ul>
             </aside>
-            <section class="content-area">
-                {{ content | safe }}
-            </section>
+            
         </main>
         <footer>
             <p>&copy; 2025 Connelly Project Space</p>

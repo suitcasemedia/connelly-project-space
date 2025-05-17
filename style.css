@@ -337,3 +337,17 @@ li {
   border-radius: 0.5rem;
   border: 1px solid #ccc;
 }
+
+.blog-layout {
+  display: flex;
+  gap: 2rem;
+}
+
+.content-area {
+  flex: 3;
+}
+
+.sidebar {
+  flex: 1;
+  order: 2; /* ensure it's on the right */
+}
