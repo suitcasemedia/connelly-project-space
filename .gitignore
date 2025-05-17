@@ -1,0 +1,12 @@
+# .gitignore
+cloudinaryform.html
+cloudinaryform-images.html
+cloudinaryform-video.html
+node_modules/
+**/node_modules/
+cloudinaryform*.html
+tools/
+tools/**
+_site/
+
+

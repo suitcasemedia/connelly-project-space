@@ -1,0 +1,18 @@
+---
+layout: bloglayout.njk
+title: "Blog"
+permalink: "/blog/index.html"
+---
+
+<h2>Blog</h2>
+
+<ul>
+  {% for post in collections.post | reverse %}
+    <li>
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <small> – {{ post.date | date('MMMM D, YYYY') }}</small>
+    </li>
+  {% endfor %}
+</ul>
+
+
