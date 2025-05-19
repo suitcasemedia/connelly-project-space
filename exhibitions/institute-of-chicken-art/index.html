@@ -4,16 +4,67 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Institute of Chicken Art – Connelly Project Space</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css"/>
+    <style>
+      header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        gap: 1rem;
+      }
+
+      .site-title h1 {
+        font-size: 1.8em;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        line-height: 1.2;
+        white-space: nowrap;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.95em;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      nav a:hover,
+      nav .current {
+        text-decoration: underline;
+      }
+
+      @media (min-width: 768px) {
+        header {
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        nav {
+          flex-direction: row;
+          gap: 1.5rem;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <a href="/">
-        <h1>Connelly Project Space</h1>
-      </a>
+      <div class="site-title">
+        <a href="/">
+          <h1>Connelly Project Space</h1>
+        </a>
+      </div>
       <nav>
         <a href="/" >Home</a>
         <a href="/exhibitions/"  class="current" >Exhibitions</a>
@@ -23,6 +74,7 @@
         <a href="/blog/" >Blog</a>
       </nav>
     </header>
+
     <main class="blog-layout">
       <section class="content-area">
         
@@ -80,6 +132,7 @@
 
       </section>
     </main>
+
     <footer>
       <p>&copy; 2025 Connelly Project Space</p>
     </footer>
