@@ -3,6 +3,7 @@ const slugify = require("slugify");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("style.css");
+  eleventyConfig.addPassthroughCopy("CNAME");
 
   // ✅ Add date filter
   eleventyConfig.addFilter("date", dateObj => {

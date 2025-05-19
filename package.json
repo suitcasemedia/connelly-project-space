@@ -1,7 +1,7 @@
 {
   "name": "ica-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Connelly Project Space site with blog",
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
@@ -16,6 +16,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/suitcasemedia/connelly-project-space/"
+    "url": "https://github.com/suitcasemedia/connelly-project-space"
   }
 }

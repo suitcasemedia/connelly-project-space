@@ -162,15 +162,25 @@ li {
 
 .media-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 2em;
-  margin-top: 1em;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+}
+.media-block {
+  flex: 0 0 300px; /* fixed width per block */
+  text-align: center;
 }
 
-.media-block {
-  flex: 1;
-  min-width: 200px;
-  text-align: center;
+.media-block img,
+.media-block video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .media-block svg.placeholder {
@@ -351,3 +361,10 @@ li {
   flex: 1;
   order: 2; /* ensure it's on the right */
 }
+
+
+/******
+For Stingel page
+*******/
+
+  
