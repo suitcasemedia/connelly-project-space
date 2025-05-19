@@ -29,20 +29,15 @@
 <section>
   <h2>Chicken Stingel</h2>
   <p>
-    The one-day-only live painting performance features a series of canvases and digitally developed copper casts. Installed
-    primarily in a chicken coop, the works by Kenny Schachter, Maura and Margaret—a pair of
-    <em>Gallus gallus domesticus</em>—are available to view by appointment through June 21, 2025.
+    The one-day-only live painting performance features a series of canvases and digitally developed copper casts...
   </p>
-  <p>
-    The exhibition draws on Rudolf Stingel's Celotex insulation panel works. Here, chickens collaborated on micro-canvases
-    using edible glue and seed. The resulting works were scanned and will later be cast in silver and gold.
-  </p>
+
   <h3>Chicken Canvases</h3>
   <section class="gallery">
-
+    
     <div class="canvas-entry">
       <h3>Canvas 1</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -58,10 +53,10 @@
         </div>
       </div>
     </div>
-
+    
     <div class="canvas-entry">
       <h3>Canvas 2</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -77,10 +72,10 @@
         </div>
       </div>
     </div>
-
+    
     <div class="canvas-entry">
       <h3>Canvas 3</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -96,10 +91,10 @@
         </div>
       </div>
     </div>
-
+    
     <div class="canvas-entry">
       <h3>Canvas 4</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -115,10 +110,10 @@
         </div>
       </div>
     </div>
-
+    
     <div class="canvas-entry">
       <h3>Canvas 6</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -134,10 +129,10 @@
         </div>
       </div>
     </div>
-
+    
     <div class="canvas-entry">
       <h3>Canvas 7</h3>
-      <div class="scroll-hint scroll-hint-top">👉 Swipe to view more</div>
+      <div class="scroll-hint">👉 Swipe to view more on small screens</div>
       <div class="media-row">
         <div class="media-block">
           <p><em>Before Pecking</em></p>
@@ -153,51 +148,89 @@
         </div>
       </div>
     </div>
-
+    
   </section>
 </section>
+
 <section>
   <p><strong>Exhibition Date:</strong> Sunday May 25th 2025 - 21st June 2025</p>
   <video src="https://res.cloudinary.com/dyliwmprw/video/upload/v1747408168/chicken-stingel/vs1k2k4jy6vhopquf1zl.mov" controls width="100%"></video>
 </section>
 
 <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const hint = entry.target.querySelector('.scroll-hint');
-        if (hint) hint.style.opacity = '1';
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.canvas-entry').forEach(entry => observer.observe(entry));
-
   document.querySelectorAll('.media-row').forEach(row => {
-    row.addEventListener('scroll', () => {
-      const hint = row.previousElementSibling;
-      if (hint && hint.classList.contains('scroll-hint')) {
+    const hint = row.previousElementSibling;
+    if (!hint || !hint.classList.contains('scroll-hint')) return;
+
+    const checkScroll = () => {
+      if (row.scrollLeft > 10) {
         hint.style.opacity = '0';
+      } else {
+        hint.style.opacity = '1';
       }
-    });
+    };
+
+    checkScroll();
+    row.addEventListener('scroll', checkScroll);
   });
 </script>
 
 <style>
-.scroll-hint {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0.3rem 0.6rem;
-  font-size: 0.8rem;
-  border-radius: 4px;
-  margin-bottom: 0.5rem;
-  text-align: right;
+
+
+/* Reduced side margins on desktop for main content */
+main {
+  max-width: 1100px;
+  margin: 4em auto;
+  padding: 0 1em;
+  text-align: left;
 }
-.scroll-hint-top {
+
+@media (min-width: 768px) {
+  main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Ensure canvas-entry doesn't add excessive offset */
+.canvas-entry {
   position: relative;
-  top: 0;
-  right: 0;
+  margin-bottom: 3em;
+}
+
+
+.scroll-hint {
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  background: #fffbcc;
+  height: 20px;
+  color: #222;
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  z-index: 10;
+  opacity: 1;
+  max-width: max-content;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+}
+
+
+.media-row::before,
+.media-row::after {
+  display: none !important;
 }
 </style>
 
