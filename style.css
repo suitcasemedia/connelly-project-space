@@ -33,13 +33,18 @@ header {
 }
 
 header h1 {
-  font-size: 1.8em;
+  font-size: 1.4em;
   font-family: 'Cormorant Garamond', serif;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.06em;
+  line-height: 1.1;
   white-space: nowrap;
-  line-height: 1.2;
+}
+@media (max-width: 767px) {
+  header h1 {
+    font-size: 1.2em;
+  }
 }
 
 nav {
