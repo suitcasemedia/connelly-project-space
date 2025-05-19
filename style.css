@@ -23,6 +23,7 @@ h2 { font-size: 1.8em; }
 h3 { font-size: 1.4em; }
 
 /* Header and Nav */
+
 header {
   display: flex;
   flex-direction: column;
