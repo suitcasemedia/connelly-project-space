@@ -160,23 +160,41 @@
 </section>
 
 <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const hint = entry.target.querySelector('.scroll-hint');
+        if (hint) {
+          hint.style.opacity = '1';
+          hint.style.visibility = 'visible';
+        }
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.canvas-entry').forEach(entry => observer.observe(entry));
+
   document.querySelectorAll('.media-row').forEach(row => {
     const hint = row.previousElementSibling;
     if (!hint || !hint.classList.contains('scroll-hint')) return;
 
-    const checkScroll = () => {
+    let timeout;
+
+    row.addEventListener('scroll', () => {
+      clearTimeout(timeout);
+
       if (row.scrollLeft > 10) {
-        hint.style.opacity = '0';
+        timeout = setTimeout(() => {
+          hint.style.opacity = '0';
+          hint.style.visibility = 'hidden';
+        }, 4000); // 4 seconds after scroll
       } else {
         hint.style.opacity = '1';
+        hint.style.visibility = 'visible';
       }
-    };
-
-    checkScroll();
-    row.addEventListener('scroll', checkScroll);
+    });
   });
 </script>
-
 <style>
 
 
@@ -226,7 +244,7 @@ main {
   max-width: max-content;
   pointer-events: none;
   white-space: nowrap;
-  transition: opacity 1.0s ease;
+  transition: opacity 0.3s ease;
 }
 
 
