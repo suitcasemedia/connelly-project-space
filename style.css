@@ -1,3 +1,4 @@
+
 /* Base layout */
 body {
   margin: 0;
@@ -8,11 +9,7 @@ body {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1, h2, h3, h4, h5 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: normal;
   margin-bottom: 0.5em;
@@ -21,39 +18,29 @@ h5 {
   letter-spacing: 0.04em;
 }
 
-h1 {
-  font-size: 2.5em;
-  letter-spacing: 0.05em;
-}
-
-h2 {
-  font-size: 1.8em;
-}
-
-h3 {
-  font-size: 1.4em;
-}
+h1 { font-size: 2.5em; letter-spacing: 0.05em; }
+h2 { font-size: 1.8em; }
+h3 { font-size: 1.4em; }
 
 /* Navigation */
-/* Updated Header with responsive padding */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #f9f9f9;
-  padding: 2rem 2rem; /* base padding (px-8, py-8) */
+  padding: 2rem 2rem;
 }
 
 @media (min-width: 768px) {
   header {
-    padding-left: 4rem; /* md:px-16 */
+    padding-left: 4rem;
     padding-right: 4rem;
   }
 }
 
 @media (min-width: 1024px) {
   header {
-    padding-left: 6rem; /* lg:px-24 */
+    padding-left: 6rem;
     padding-right: 6rem;
   }
 }
@@ -81,12 +68,10 @@ nav a {
   letter-spacing: 0.04em;
 }
 
-nav a:hover,
-nav .active {
+nav a:hover, nav .active {
   text-decoration: underline;
 }
 
-/* Main content */
 main {
   max-width: 750px;
   margin: 4em auto;
@@ -94,7 +79,6 @@ main {
   text-align: left;
 }
 
-/* Buttons / links */
 a {
   color: #333;
   text-decoration: underline;
@@ -105,7 +89,6 @@ a:hover {
   color: #000;
 }
 
-/* Video styling */
 video {
   display: block;
   width: 100%;
@@ -115,7 +98,6 @@ video {
   border-radius: 4px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 3em 1em;
@@ -124,40 +106,13 @@ footer {
   border-top: 1px solid #eee;
 }
 
-/* Lists */
-ul {
-  padding-left: 1.5em;
-  list-style-type: disc;
-}
-
-li {
-  margin-bottom: 1em;
-}
-
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    display: block;
-    margin: 0.5em 0;
-  }
-
-  header h1 {
-    font-size: 1.8em;
-    margin-bottom: 1em;
-  }
-}
-
 .gallery {
   margin-top: 4em;
 }
 
 .canvas-entry {
   margin-bottom: 4em;
+  position: relative;
 }
 
 .media-row {
@@ -167,9 +122,13 @@ li {
   overflow-x: auto;
   padding-bottom: 1rem;
   margin-top: 1rem;
+  scroll-snap-type: x mandatory;
+  position: relative;
 }
+
 .media-block {
-  flex: 0 0 300px; /* fixed width per block */
+  flex: 0 0 300px;
+  scroll-snap-align: start;
   text-align: center;
 }
 
@@ -183,188 +142,42 @@ li {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.media-block svg.placeholder {
-  width: 100%;
-  max-width: 250px;
-  height: auto;
-  stroke: #ccc;
-}
-.media-placeholder {
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 2rem 0;
+.media-row::before,
+.media-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 30px;
+  pointer-events: none;
+  z-index: 2;
 }
 
-.media-placeholder > div {
-  width: 300px;
-  height: 300px;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.media-row::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
 }
 
-.media-icon {
-  width: 80px;
-  height: 80px;
-  stroke: #bbb;
+.media-row::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
 }
 
-.exhibition-list {
-  list-style: none;
-  padding: 0;
+.scroll-hint {
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 0.3rem 0.6rem;
+  font-size: 0.8rem;
+  border-radius: 4px;
+  z-index: 3;
+  animation: fadeOut 4s ease 2s forwards;
 }
 
-.exhibition-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2em;
-}
-
-.exhibition-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-.thumbnail {
-  width: 80px;
-  height: 80px;
-  background-color: #ddd;
-  border-radius: 8px;
-  margin-right: 1em;
-  flex-shrink: 0;
-}
-
-.exhibition-text {
-  font-size: 0.95em;
-}
-.exhibition-item:hover {
-  background-color: #f5f5f5;
-  transition: background-color 0.3s ease;
-}
-.media-placeholder {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.video-placeholder {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.image-placeholder {
-  width: 48%;
-  aspect-ratio: 1 / 1;
-  background-color: #eee;
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.media-icon {
-  width: 40px;
-  height: 40px;
-  color: #ccc;
-}
-
-@media (max-width: 768px) {
-  .image-placeholder {
-    width: 100%;
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
-
-.contact-form {
-  max-width: 600px;
-  margin: 4em auto;
-  padding: 0 1em;
-}
-
-.contact-form h2 {
-  margin-bottom: 1em;
-}
-
-.contact-form form {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form label {
-  margin-top: 1em;
-  font-weight: 500;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.75em;
-  margin-top: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.contact-form button {
-  margin-top: 2em;
-  padding: 0.75em 1.5em;
-  font-size: 1em;
-  border: none;
-  background: #333;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.contact-form button:hover {
-  background: #000;
-}
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-
-
-.image-grid img {
-  width: 100%;
-  height: 200px; /* Set to desired height */
-  object-fit: cover;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
-}
-
-.blog-layout {
-  display: flex;
-  gap: 2rem;
-}
-
-.content-area {
-  flex: 3;
-}
-
-.sidebar {
-  flex: 1;
-  order: 2; /* ensure it's on the right */
-}
-
-
-/******
-For Stingel page
-*******/
-
-  
