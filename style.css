@@ -183,15 +183,9 @@ footer {
   z-index: 2;
 }
 
-.media-row::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
-}
 
-.media-row::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
-}
+
+
 
 /* Scroll hint (if used) */
 .scroll-hint {

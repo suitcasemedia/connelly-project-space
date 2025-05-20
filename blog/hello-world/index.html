@@ -8,6 +8,41 @@
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@400;500&display=swap"
             rel="stylesheet">
         <link rel="stylesheet" href="/style.css"/>
+        <style>
+          .blog-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+          }
+
+          @media (min-width: 768px) {
+            .blog-layout {
+              flex-direction: row;
+              align-items: flex-start;
+            }
+          }
+
+          .content-area {
+            flex: 3;
+          }
+
+          .sidebar {
+            flex: 1;
+          }
+
+          .sidebar h3 {
+            margin-top: 0;
+          }
+
+          .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+          }
+
+          .sidebar ul li {
+            margin-bottom: 0.5rem;
+          }
+        </style>
     </head>
     <body>
         <header>
@@ -50,7 +85,6 @@
                     
                 </ul>
             </aside>
-            
         </main>
         <footer>
             <p>&copy; 2025 Connelly Project Space</p>
